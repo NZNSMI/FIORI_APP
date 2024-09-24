@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="actionf4Id" title="Value Help" class="sapUiPopupWithPadding" items="{/ValueHelpSet}" 
+	search="_ValueHelpSearch"
+		confirm="_ValueHelpClose" cancel="_ValueHelpClose" multiSelect="false" noDataText="No Value Help Found">
+		<StandardListItem title="{Key}" description="{Description}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

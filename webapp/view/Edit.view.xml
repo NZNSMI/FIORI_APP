@@ -1,0 +1,63 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="zpm.zpm_infoboard.controller.Edit" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App backgroundOpacity="5">
+		<pages>
+			<Page xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" title="Order {Aufnr}" floatingFooter="true"
+				showNavButton="false" showSubHeader="false"
+				action:wiring="\{'navButtonPress':\{'navigation':\{'routeName':'Home'\}\}\}">
+				<content>
+					<f:SimpleForm id="pmorderId" editable="true" width="auto" layout="ResponsiveGridLayout" maxContainerCols="2" labelSpanL="3" labelSpanM="4"
+						emptySpanL="4" labelSpanS="12" emptySpanM="4" columnsL="1" columnsM="1" backgroundDesign="Solid">
+						<f:content>
+							<Label design="Bold" text="{/#InfoBoard/Aufnr/@sap:label}"/>
+							<Text id="aufnrId" text="{Aufnr}"/>
+							<Label design="Bold" text="{/#InfoBoard/Vornr/@sap:label}"/>
+							<Text id="vornrId" text="{Vornr}"/>
+							<Label design="Bold" text="{/#InfoBoard/Tplnr/@sap:label}"/>
+							<Text text="{Tplnr} - {Pltxt}"/>
+							<Label design="Bold" text="{/#InfoBoard/Ltxa1/@sap:label}"/>
+							<Text text="{Ltxa1}"/>
+							<Label design="Bold" text="{/#InfoBoard/Anlzu/@sap:label}"/>
+							<Text text="{Anlzux}"/>
+							<Label design="Bold" text="{/#InfoBoard/Priokx/@sap:label}"/>
+							<Text text="{Priokx}"/>
+							<Label design="Bold" text="{/#InfoBoard/Anzzl/@sap:label}"/>
+							<Text text="{Anzzl}"/>
+							<Label design="Bold" text="{/#InfoBoard/Dauno/@sap:label}"/>
+							<Text text="{Dauno} {Daune}"/>
+							<Label design="Bold" text="{/#InfoBoard/VArbpl/@sap:label}"/>
+							<Text id="varbplId" text="{VArbpl}"/>
+							<Label design="Bold" text="{/#InfoBoard/Users/@sap:label}"/>
+							<MultiInput id="multiInput" suggestionItems="{/UserSet}" value="{path:'Users', formatter: '.formatKey'}" valueHelpRequest="handleValueHelp">
+								<core:Item key="{Username}" text="{Fullname}"/>
+							</MultiInput>
+							<Label design="Bold" text="{/#InfoBoard/Progress/@sap:label}"/>
+							<ComboBox id="progressId" showSecondaryValues="true" items="{/ProgressSet}" value="{Txtprogress}" selectedKey="01">
+								<core:ListItem key="{Domvalue}" text="{Ddtext}" additionalText="{Domvalue}"/>
+							</ComboBox>
+							<Label design="Bold" text="{/#InfoBoard/Eqstatus/@sap:label}"/>
+							<ComboBox id="eqstatusId" showSecondaryValues="true" items="{/EqstatusSet}" value="{Txteqstatus}" selectedKey="02">
+								<core:ListItem key="{Domvalue}" text="{Ddtext}" additionalText="{Domvalue}"/>
+							</ComboBox>
+							<Label design="Bold" text="{/#InfoBoard/Comments/@sap:label}"/>
+							<TextArea id="commentsId" value="{Comments}" rows="4" maxLength="255" showExceededText="true"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+				<footer>
+					<Toolbar width="100%" id="toolbar1">
+						<content>
+							<ToolbarSpacer/>
+							<Button xmlns="sap.m" text="Confirm" id="confirmId" enabled="{= ${Iwkpdi} === '' ? false : true}" activeIcon="sap-icon://accept" icon="sap-icon://accept" type="Emphasized" press="confirm"
+								action:wiring="\{'press':\{'navigation':\{'routeName':'Confirm','keys':[\{'name':'Aufnr','type':'Edm.String'\},\{'name':'Vornr','type':'Edm.String'\}]\}\}\}" />		
+							<Button xmlns="sap.m" text="Save" id="button0" activeIcon="sap-icon://accept" icon="sap-icon://accept" type="Accept" press="onSave"/>
+							<Button xmlns="sap.m" text="Cancel" id="cancelId" activeIcon="sap-icon://cancel" icon="sap-icon://cancel" type="Reject" press="action"
+								action:wiring="\{'press':\{'navigation':\{'routeName':'Home'\}\}\}"/>
+								
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

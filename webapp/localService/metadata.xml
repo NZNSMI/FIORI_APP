@@ -1,0 +1,62 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZPM_PLAN_SCHEDULE_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="InfoBoard" sap:content-version="1">
+				<Key><PropertyRef Name="Aufnr"/><PropertyRef Name="Vornr"/></Key><Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Activity" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktext" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Priok" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Priokx" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pltxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional location"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Eqktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Equipment" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Anlzu" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="System Condition"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Anlzux" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="System Condition"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ingpr" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Planner group" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Gstrp" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Bas. start date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fsavd" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Earliest Start Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fsedd" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Earliest End Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VArbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Work Center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ltxa1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Opr. short text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Dauno" Type="Edm.Decimal" Precision="5" Scale="1" sap:unicode="false" sap:label="Duration" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Daune" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Duration" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="Anzzl" Type="Edm.Decimal" Nullable="false" Precision="2" Scale="0" sap:unicode="false" sap:label="No of men"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Users" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Responsible" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Progress" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Progress" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Eqstatus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Equipment Status"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Txteqstatus" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Equipment Status"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Txtprogress" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Progress"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Comments" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Comments" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="User" sap:content-version="1">
+				<Key><PropertyRef Name="Username"/></Key><Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fullname" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Full Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Work Center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/></EntityType>
+			<EntityType Name="Progress" sap:content-version="1">
+				<Key><PropertyRef Name="Domvalue"/></Key><Property Name="Domvalue" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Value" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ddtext" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Eqstatus" sap:content-version="1">
+				<Key><PropertyRef Name="Domvalue"/></Key><Property Name="Domvalue" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Value" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ddtext" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PlannerGroup" sap:content-version="1">
+				<Key><PropertyRef Name="Ingrp"/></Key><Property Name="Ingrp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Planner Group Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Innam" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Planner Group Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Workcenter" sap:content-version="1">
+				<Key><PropertyRef Name="Varbpl"/></Key><Property Name="Varbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Work Center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktext" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Work center" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZPM_PLAN_SCHEDULE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="InfoBoardSet" EntityType="ZPM_PLAN_SCHEDULE_SRV.InfoBoard" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="UserSet" EntityType="ZPM_PLAN_SCHEDULE_SRV.User" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ProgressSet" EntityType="ZPM_PLAN_SCHEDULE_SRV.Progress" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="EqstatusSet" EntityType="ZPM_PLAN_SCHEDULE_SRV.Eqstatus" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="PlannerGroupSet" EntityType="ZPM_PLAN_SCHEDULE_SRV.PlannerGroup" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="WorkcenterSet" EntityType="ZPM_PLAN_SCHEDULE_SRV.Workcenter" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZPM_PLAN_SCHEDULE_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZPM_PLAN_SCHEDULE_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/test/Opa5","zpm/zpm_infoboard/test/integration/pages/Common","sap/ui/test/opaQunit","zpm/zpm_infoboard/test/integration/pages/Home","zpm/zpm_infoboard/test/integration/navigationJourney"],function(t,e){"use strict";t.extendConfig({arrangements:new e,viewNamespace:"zpm.zpm_infoboard.view.",autoWait:true})});

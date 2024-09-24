@@ -1,0 +1,1 @@
+sap.ui.define(["zpm/zpm_infoboard/controller/Home.controller"],function(t){"use strict";QUnit.module("Home Controller");QUnit.test("I should test the app controller loads",function(o){var e=new t;var n=e.getMetadata().getName();o.ok(n,"zpm/zpm_infoboard.controller.Home")});QUnit.test("I should test any additional controls",function(t){t.ok(false,"Implement test")})});

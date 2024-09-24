@@ -1,0 +1,172 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "zpm.zpm_infoboard",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZPM_PLAN_SCHEDULE_SRV": {
+				"uri": "/sap/opu/odata/sap/ZPM_PLAN_SCHEDULE_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://activities",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"fullWidth": true,
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "zpm.zpm_infoboard.view.Home",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.52.20",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.comp": {
+					"minVersion": ""
+				},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "zpm.zpm_infoboard.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "None",
+					"useBatch": false
+				},
+				"dataSource": "ZPM_PLAN_SCHEDULE_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "zpm.zpm_infoboard.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false,
+				"transition": "fade"
+			},
+			"routes": [
+				{
+					"name": "Confirm",
+					"pattern": "Confirm/{Aufnr},{Vornr}",
+					"target": [
+						"Confirm"
+					]
+				},
+				{
+					"name": "Home",
+					"pattern": "",
+					"target": [
+						"Home"
+					]
+				},
+				{
+					"name": "Edit",
+					"pattern": "Edit/{Aufnr},{Vornr}",
+					"target": [
+						"Edit"
+					]
+				}
+			],
+			"targets": {
+				"Home": {
+					"viewType": "XML",
+					"transition": "fade",
+					"clearControlAggregation": false,
+					"viewName": "Home",
+					"viewLevel": 1
+				},
+				"Edit": {
+					"viewType": "XML",
+					"viewName": "Edit",
+					"transition": "fade",
+					"clearControlAggregation": false,
+					"viewLevel": 2
+				},
+				"Confirm": {
+					"viewType": "XML",
+					"viewName": "Confirm",
+					"transition": "fade",
+					"clearControlAggregation": false,
+					"viewLevel": 2
+				}
+			},
+			"additionalData": {
+				"zpm.zpm_infoboard.view.Edit": {
+					"routeName": "Edit",
+					"entitySet": "/InfoBoardSet"
+				}
+			},
+			"additionalConfirmData": {
+				"zpm.zpm_infoboard.view.Edit": {
+					"routeName": "Confirm"
+				}
+			},
+			"additionalConfirmData1": {
+				"zpm.zpm_infoboard.view.Confirm": {
+					"routeName": "Confirm"
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zpm_infoboard",
+		"_version": "1.1.0"
+	}
+}

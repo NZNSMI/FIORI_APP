@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleConfirmInDialog">
+		<sortItems>
+			<ViewSettingsItem text="Functional Location" key="Tplnr" selected="true" />
+		</sortItems>
+		<groupItems>
+			<ViewSettingsItem text="Work Center" key="VArbpl" selected="true" />
+			<ViewSettingsItem text="Functional Location" key="Tplnr" />
+		</groupItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

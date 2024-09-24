@@ -1,0 +1,166 @@
+<mvc:View controllerName="zpm.zpm_infoboard.controller.Home" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true" xmlns="sap.m" xmlns:fb="sap.ui.comp.filterbar">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}" contentOnlyBusy="true" showNavButton="true" showHeader="false">
+				<content>
+					<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m"
+						xmlns:sap.ui.layout="sap.ui.layout" width="100%" id="layout0">
+						<sap.ui.layout:content>
+							<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="false" showClearButton="true" showFilterConfiguration="false"
+								filterBarExpanded="false" useToolbar="false">
+								<fb:filterGroupItems>
+									<fb:FilterGroupItem groupName="G1" name="A" label="{i18n>StartDate}" labelTooltip="Select Filter Values" partOfCurrentVariant="true"
+										visibleInFilterBar="true" groupTitle="Filter">
+										<fb:control>
+											<DatePicker id="sdateId" textAlign="Center" valueFormat="yyyy-MM-dd" value="" required="true" change="handleChange"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+									<fb:FilterGroupItem groupName="G1" name="B" label="{i18n>PlannerGroup}" partOfCurrentVariant="true" visibleInFilterBar="true"
+										groupTitle="Filter">
+										<fb:control>
+											<ComboBox xmlns="sap.m" width="auto" id="pgId" items="{/PlannerGroupSet}" filterSecondaryValues="true" showSecondaryValues="true">
+												<items>
+													<core:ListItem xmlns:core="sap.ui.core" key="{Ingrp}" text="{Innam}" additionalText="{Ingrp}"/>
+												</items>
+											</ComboBox>
+										</fb:control>
+									</fb:FilterGroupItem>
+									<fb:FilterGroupItem groupName="G1" name="C" label="{i18n>WorkCenter}" partOfCurrentVariant="true" visibleInFilterBar="true"
+										groupTitle="Filter">
+										<fb:control>
+											<ComboBox xmlns="sap.m" width="auto" id="workcenterId" items="{/WorkcenterSet}" filterSecondaryValues="true" showSecondaryValues="true">
+												<items>
+													<core:ListItem xmlns:core="sap.ui.core" key="{Varbpl}" text="{Ktext}" additionalText="{Varbpl}"/>
+												</items>
+											</ComboBox>
+										</fb:control>
+									</fb:FilterGroupItem>
+									<fb:FilterGroupItem groupName="G1" name="E" label="{i18n>Tplnr}" partOfCurrentVariant="true" visibleInFilterBar="true" groupTitle="Filter">
+										<fb:control>
+											<Input id="funcLocId" type="Text" class="sapUiSmallMarginBottom" placeholder="{i18n>EnterText}"/>
+										</fb:control>
+									</fb:FilterGroupItem>
+									<fb:FilterGroupItem groupName="G1" name="D" label="{i18n>Refresh}" partOfCurrentVariant="true" visibleInFilterBar="true" groupTitle="Filter">
+										<fb:control>
+											<Switch id="refreshId" state="false" customTextOn="{i18n>Yes}" customTextOff="{i18n>No}" change="handleRefresh">
+												<layoutData>
+													<FlexItemData growFactor="1"/>
+												</layoutData>
+											</Switch>
+										</fb:control>
+									</fb:FilterGroupItem>
+								</fb:filterGroupItems>
+							</fb:FilterBar>
+						</sap.ui.layout:content>
+					</sap.ui.layout:VerticalLayout>
+					<Table id="table0" sticky="HeaderToolbar,ColumnHeaders" items="{path : '/InfoBoardSet', sorter : { path: 'VArbpl' , group : true }}" noDataText="{i18n>noDataText}"
+						enableBusyIndicator="true" busyIndicatorSize="Large">
+						<headerToolbar>
+							<OverflowToolbar id="otbSubheader">
+								<ToolbarSpacer/>
+								<Label text="{i18n>InfoBoard}"/>
+								<ToolbarSpacer/>
+								<Button type="Transparent" tooltip="Refresh" text="{i18n>Refresh}" icon="sap-icon://refresh" press="onFresh"/>
+								<Button type="Transparent" tooltip="Sort" text="{i18n>GroupSort}" icon="sap-icon://group-2" press="onGroup"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="column20">
+								<header>
+									<Label text="{i18n>StartDateFinishDate}" id="label20" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column0">
+								<header>
+									<Label text="{i18n>Aufnr}" id="label0" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column00" minScreenWidth="Tablet">
+								<header>
+									<Label text="{i18n>Vornr}" id="label00" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column2" minScreenWidth="Tablet" demandPopin="true">
+								<header>
+									<Label text="{i18n>Tplnr}" id="label2" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column3" minScreenWidth="Tablet" demandPopin="true">
+								<header>
+									<Label text="{i18n>Ltxa1}" id="label3" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column4" minScreenWidth="Tablet" demandPopin="true">
+								<header>
+									<Text text="{i18n>Anlzux}" id="label4" wrapping="true" textAlign="Center"/>
+								</header>
+							</Column>
+							<Column id="column51" minScreenWidth="Tablet" demandPopin="true">
+								<header>
+									<Text text="{i18n>Priokx}" id="label55" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column7" minScreenWidth="Tablet" hAlign="Center" demandPopin="true">
+								<header>
+									<Label text="{i18n>Anzzl}" id="label7" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column6" minScreenWidth="Tablet">
+								<header>
+									<Label text="{i18n>Dauno}" id="label6" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column8" minScreenWidth="Tablet" demandPopin="true">
+								<header>
+									<Label text="{i18n>Comments}" id="label8" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label text="{i18n>Users}" id="label1" wrapping="true" width="auto"/>
+								</header>
+							</Column>
+							<Column id="column9" minScreenWidth="Tablet" demandPopin="true">
+								<header>
+									<Label text="{i18n>Txtprogress}" id="label9" wrapping="true"/>
+								</header>
+							</Column>
+							<Column id="column10" minScreenWidth="Tablet" demandPopin="true">
+								<header>
+									<Label text="{i18n>Txteqstatus}" id="label10" wrapping="true"/>
+								</header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" type="Navigation" id="item0" selected="true"
+								detailPress="action"
+								action:wiring="\{'detailPress':\{'navigation':\{'routeName':'Edit','keys':[\{'name':'Aufnr','type':'Edm.String'\},\{'name':'Vornr','type':'Edm.String'\}]\}\},'press':\{'navigation':\{'routeName':'Edit','keys':[\{'name':'Aufnr','type':'Edm.String'\},\{'name':'Vornr','type':'Edm.String'\}]\}\}\}"
+								press="action">
+								<cells>
+									<ObjectIdentifier title="{ path: 'Fsavd', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', UTC: true } }"
+										text="{ path: 'Fsedd', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium', UTC: true } }"/>
+									<Text text="{Aufnr}" id="text0"/>
+									<Text text="{Vornr}" id="text00"/>
+									<Text text="{Tplnr}" id="text2"/>
+									<Text text="{Ltxa1}" id="text3"/>
+									<Text text="{Anlzux}" id="text4" textAlign="Center"/>
+									<!--<Text text="{Priokx}" id="text5"/>-->
+									<Button icon="sap-icon://sys-enter-2" type="{ path: 'Priok', formatter:'.Status' }" tooltip="View" text="{Priokx}" />
+
+									<!--<Icon class="sapUiIconColorNeutral" xmlns="sap.ui.core" src="sap-icon://sys-enter-2" color="{ path: 'Priok', formatter:'.Status' }"></Icon>-->
+									<Text text="{Anzzl}" id="text7"/>
+									<Text text="{Dauno} {Daune}" id="text6"/>
+									<Text text="{Comments}" id="text8"/>
+									<Text text="{Users}" id="text1" width="auto"/>
+									<Text text="{path:'Txtprogress', formatter: '.Txtprogress'}" id="text9"/>
+									<Text text="{path:'Txteqstatus', formatter: '.Txteqstatus'}" id="text10"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
